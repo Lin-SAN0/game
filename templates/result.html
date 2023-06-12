@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>結果</title>
+</head>
+<body>
+    <h2>結果</h2>
+    <p>プレイヤー名：{{ player }}</p>
+    <p>ルーム：{{ room }}</p>
+    <p>お題：{{ theme }}</p>
+    <p>判定：{% if is_correct %}正解！{% else %}不正解{% endif %}</p>
+    <form action="/room" method="post">
+        <input type="submit" value="ルームから退出">
+    </form>
+    <script>
+        // ルームから退出するときにindex.htmlにリダイレクトする
+        document.querySelector('form').addEventListener('submit', (event) => {
+            event.preventDefault();  // フォームのデフォルトの動作をキャンセル
+
+            // index.htmlにリダイレクト
+            window.location.href = "/";
+        });
+    </script>
+</body>
+</html>
+
+

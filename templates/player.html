@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>プレイヤー名入力</title>
+</head>
+<body>
+    <h2>プレイヤー名入力</h2>
+    <form action="/game" method="post">
+        <input type="hidden" name="room" value="{{ room }}">
+        <label>プレイヤー名を入力してください：</label>
+        <input type="text" name="player" required>
+        <input type="submit" value="ゲームスタート">
+    </form>
+</body>
+</html>
+
+

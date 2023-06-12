@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>絵描きゲーム</title>
+    <script type="text/javascript" src="{{ url_for('static', filename='drawing.js') }}"></script>
+
+    <style>
+        /* 絵を描くためのキャンバスのスタイル */
+        canvas {
+        background-color: white;
+        border: solid 5px black;
+    }
+    </style>
+</head>
+<body>
+    <h2>絵描きゲーム - {{ player }}さん</h2>
+    <p>お題：{{ theme }}</p>
+    <canvas id="canvas" width="300" height="300"></canvas>
+    <br>
+    <button id="clear-button">クリア</button>
+    <button id="submit-button">絵を送信</button>
+    <form id="game-form" action="/result" method="post">
+        <input type="hidden" name="player" value="{{ player }}">
+        <input type="hidden" name="room" value="{{ room }}">
+        <input type="hidden" name="theme" value="{{ theme }}">
+        <input type="hidden" id="image-data" name="image_data">
+    </form>
+</body>
+</html>
+
+
